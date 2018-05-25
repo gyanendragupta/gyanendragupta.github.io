@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="content"  content="power of compounding" />
+
+  <title>Retirement Calculator</title>
+  <script src="js/compounding.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/style.css">  
+
+</head>
+<body>
+<ul>
+  <li><a href="/">Home</a></li>
+  <li><a href="/cagr.html">Recurring Investment CAGR</a></li>
+  <li><a href="/loan.html">Loan Calculator</a></li>
+  <li><a href="/retirement.html">Retirement Calculator</a></li>
+  <li><a class="active" href="/compounding.html">Power of Compounding</a></li>
+  <li><a href="/contact.html">Feedback/Contact</a></li>
+</ul>
+<div style="margin-left:15%;padding:1px 16px;height:100%; background:#ccccdc ;border:1px solid #cccccc;">
+<strong style="font-size: 20px; text-decoration: underline;">Power of Compounding</strong> 
+
+<form name="compounding" action="">
+<p style="background:orange;border:1px solid #cccccc;padding: 10px;">
+<strong>
+Investment Amount: <input id="corpus" type="text" value="" size="10" maxlength="15"></input>
+Annual Interest Rate (%): <input id="cagr" type="text" value="10" size="2" maxlength="2"></input>
+Years: <input id="years" type="text" value="30" size="3" maxlength="3"></input></strong>
+
+<input type="button" value="Calculate" id="calculate" style="color:#3300FF; font-size:16px; " onclick="calc();"/>
+
+</p>
+<BR>
+<BR>
+<table id="myTableData" border="1" cellpadding="1" style="background:skyblue;border:1px solid #cccccc;padding: 10px; visibility: hidden;">
+	<tbody>
+		<tr>			
+			<td align="center">Year</td>			
+			<td align="center">Corpus Appreciation</td>
+			<td align="center">Value of Investment</td>
+		</tr>
+	</tbody>
+</table>
+
+</form>
+<!-- discuss code begins -->
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = 'compounding.html';  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = 'compounding'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://http-test-ggupta-rhcloud-com.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<!-- discuss code ends -->
+
+</div>
+</body>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-96367819-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</html>

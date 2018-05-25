@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loan Calculator</title>
+<script src="js/loan.js" type="text/javascript"></script>
+<link rel="stylesheet" href="css/navbar.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<ul>
+  <li><a href="/">Home</a></li>
+  <li><a href="/cagr.html">Recurring Investment CAGR</a></li>
+  <li><a class="active" href="/loan.html">Loan Calculator</a></li>
+  <li><a href="/retirement.html">Retirement Calculator</a></li>
+  <li><a href="/compounding.html">Power of Compounding</a></li>
+  <li><a href="/contact.html">Feedback/Contact</a></li>
+</ul>
+<div style="margin-left:15%;padding:1px 16px;height:100%; background:#ccccdc ;border:1px solid #cccccc;">
+<strong style="font-size: 20px; text-decoration: underline;">Loan Calculator</strong>
+	
+		<form name="loanDetails" action="calculateEMI" method="get" >
+			<table border="1" style="background:orange;border:1px solid #cccccc;padding: 10px;">
+				<tbody>
+					<tr>
+						<td width="100%">
+							<p>							
+								<b>Amount :</b>&nbsp;&nbsp;<input class="textbox" maxlength="12" name="loan_amount" size="8" type="text" />
+					&nbsp;&nbsp;<b>Duration (Months):</b>&nbsp;&nbsp;<input class="textbox" maxlength="3" name="loan_time" size="3" type="text" />							
+					&nbsp;&nbsp;<b>Interest Rate(%):</b>&nbsp;&nbsp;<input class="textbox" maxlength="5" name="loan_rate" size="3" type="text" />
+							</p>					
+						</td>
+					</tr>
+					<tr>
+						<td width="100%" class="">
+							<p>
+								<b>EMI Calculated:</b>&nbsp;&nbsp;<input class="textbox" name="loan_emi" size="12" type="text" disabled/>
+								<b>Total Interest:</b>&nbsp;&nbsp;<input class="textbox" name="total_int" size="12" type="text" disabled/>
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td class="" colspan="2">
+							<p>
+								<input onclick="calculateEMI(this.form);"
+									style="font-weight: bold; background: #ededed;" type="Button"
+									value="Calculate" /> <input
+									onclick="showAmortization(this.form);"
+									style="font-weight: bold; background: #ededed;" type="Button"
+									value="Personalize" /> <input
+									style="font-weight: bold; background: #ededed;" type="reset"
+									value="Reset" />
+							</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>		
+		<BR>
+		<div id="divTable" style="visibility: hidden;">		
+		<table id="myTableData" border="1" cellpadding="0" style="background:skyblue;border:1px solid #cccccc;padding: 10px;">
+			<tbody>
+				<tr>
+					<td>Outstanding Amount</td>
+					<td>EMI</td>
+					<td>Interest Rate</td>
+					<td>Interest component</td>
+					<td>Principal component</td>
+				</tr>
+			</tbody>
+		</table>
+		<input onclick="recalculate(this.form);" style="font-weight: bold; background: #ededed;" type="Button" value="Re-Calculate" />
+		<b>&nbsp;&nbsp;EMI Total:</b>&nbsp;&nbsp;<input class="textbox" id="emi_total" type="text" disabled/>
+		<b>&nbsp;&nbsp;Interest Total:</b>&nbsp;&nbsp;<input class="textbox" id="interest_total" type="text" disabled/>
+		</div>
+		</form>
+		<footer>
+			<div class=""></div>
+		</footer>
+<!-- discuss code begins -->
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = 'loan.html';  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = 'loan'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://http-test-ggupta-rhcloud-com.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<!-- discuss code ends -->
+
+
+</div>
+</body>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-96367819-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</html>

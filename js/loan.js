@@ -211,15 +211,15 @@ function recalculate(form){
 		emiTextBoxId = "emi"+i;
     	roiTextBoxId = "roi"+i;    	
     	if (i == 1){
-    		outstandingAmt = parseInt(row.cells[0].innerHTML); // read first value of principal amount
+    		outstandingAmt = parseInt(row.cells[1].innerHTML); // read first value of principal amount
     	} else{
-    		row.cells[0].innerHTML = outstandingAmt;// calculated value
+    		row.cells[1].innerHTML = outstandingAmt;// calculated value
     	}
 		emi = document.getElementById(emiTextBoxId).value;    	
     	roi = document.getElementById(roiTextBoxId).value;    	
     	intComponent = RoundNumber(outstandingAmt*((roi/100)/12));    	    	
-    	row.cells[3].innerHTML = intComponent;
-    	row.cells[4].innerHTML = (emi - intComponent);
+    	row.cells[4].innerHTML = intComponent;
+    	row.cells[5].innerHTML = (emi - intComponent);
         outstandingAmt = (outstandingAmt - (emi - intComponent));// new principle
         interestTotal = interestTotal + intComponent;
         emiTotal = emiTotal + parseInt(emi);
@@ -249,8 +249,8 @@ function recalculate(form){
 	//alert("emiTotal: "+ emiTotal + " emi: "+ emi +" outstandingAmt " + outstandingAmt+ " intComponent " +intComponent);
 	var lastemi = (parseInt(emi) + outstandingAmt) ;
 	//alert(lastemi);
-	row.cells[1].innerHTML= '<input type="text" id='+emiTextBoxId+' value='+lastemi+'>';
-	row.cells[4].innerHTML= (lastemi - intComponent);
+	row.cells[2].innerHTML= '<input type="text" id='+emiTextBoxId+' value='+lastemi+'>';
+	row.cells[5].innerHTML= (lastemi - intComponent);
 	emiTotal = (emiTotal - emi + lastemi);
 	document.getElementById("emi_total").value = emiTotal;
 	document.getElementById("interest_total").value = interestTotal;

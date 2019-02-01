@@ -170,15 +170,16 @@ function showAmortization(form){
 		var roiTextBoxId;
 		var row;
 		for ( var i = 1; i <= form.loan_time.value; i++){
-			row = table.insertRow(i);			
-	    	row.insertCell(0).innerHTML= outstandingAmt;
+			row = table.insertRow(i);
+		row.insertCell(0).innerHTML= i;	
+	    	row.insertCell(1).innerHTML= outstandingAmt;
 	    	emiTextBoxId = "emi"+i;
 	    	roiTextBoxId = "roi"+i;	    	
-	    	row.insertCell(1).innerHTML= '<input type="text" id='+emiTextBoxId+' value='+emi+'>'; 
-	    	row.insertCell(2).innerHTML= '<input type="text" id='+roiTextBoxId+' value='+form.loan_rate.value+'>';	    	
+	    	row.insertCell(2).innerHTML= '<input type="text" id='+emiTextBoxId+' value='+emi+'>'; 
+	    	row.insertCell(3).innerHTML= '<input type="text" id='+roiTextBoxId+' value='+form.loan_rate.value+'>';	    	
 	    	intComponent = RoundNumber(outstandingAmt*roi);
-	    	row.insertCell(3).innerHTML= intComponent;
-	        row.insertCell(4).innerHTML= (emi - intComponent);
+	    	row.insertCell(4).innerHTML= intComponent;
+	        row.insertCell(5).innerHTML= (emi - intComponent);
 	        outstandingAmt = (outstandingAmt - (emi - intComponent));
 	        interestTotal = interestTotal + intComponent;
 	        emiTotal = emiTotal + emi;
@@ -230,15 +231,16 @@ function recalculate(form){
 		}
 	} else if (i == rowcount && outstandingAmt > 0){
 		for ( ; outstandingAmt > 0 ; i++){
-			row = table.insertRow(i);			
-	    	row.insertCell(0).innerHTML= outstandingAmt;
+			row = table.insertRow(i);
+		row.insertCell(0).innerHTML= i;	
+	    	row.insertCell(1).innerHTML= outstandingAmt;
 	    	emiTextBoxId = "emi"+i;
 	    	roiTextBoxId = "roi"+i;
-	    	row.insertCell(1).innerHTML= '<input type="text" id='+emiTextBoxId+' value='+emi+'>'; 
-	    	row.insertCell(2).innerHTML= '<input type="text" id='+roiTextBoxId+' value='+roi+'>';	    	
+	    	row.insertCell(2).innerHTML= '<input type="text" id='+emiTextBoxId+' value='+emi+'>'; 
+	    	row.insertCell(3).innerHTML= '<input type="text" id='+roiTextBoxId+' value='+roi+'>';	    	
 	    	intComponent = RoundNumber(outstandingAmt*((roi/100)/12));
-	    	row.insertCell(3).innerHTML= intComponent;
-	        row.insertCell(4).innerHTML= (emi - intComponent);
+	    	row.insertCell(4).innerHTML= intComponent;
+	        row.insertCell(5).innerHTML= (emi - intComponent);
 	        outstandingAmt = (outstandingAmt - (emi - intComponent));
 	        interestTotal = interestTotal + intComponent;
 	        emiTotal = emiTotal + parseInt(emi);

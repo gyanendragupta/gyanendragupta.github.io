@@ -55,7 +55,7 @@ function addRow() {
     	//alert("inDateId: "+inDateId);
     	inValId = "inVal"+(rowCount+i);
     	row = table.insertRow((rowCount+i));
-	row.insertCell(0).innerHTML= i+1;
+	row.insertCell(0).innerHTML= rowCount+i;
     	row.insertCell(1).innerHTML= '<input type="button" value = "Delete" onClick="Javacsript:deleteRow(this)">';
     	dateToSet = getDate(prevInDate, rowCount+i);//if first row set today's date, else based on selected frequency 
     	row.insertCell(2).innerHTML= '<input id='+inDateId+' type="text" value='+dateToSet+'>';
